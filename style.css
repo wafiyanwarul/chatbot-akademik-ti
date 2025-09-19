@@ -1,0 +1,70 @@
+/* styles.css */
+/* Custom scrollbar for chat area */
+#chat-area::-webkit-scrollbar {
+  width: 8px;
+}
+#chat-area::-webkit-scrollbar-track {
+  background: transparent;
+}
+#chat-area::-webkit-scrollbar-thumb {
+  background-color: rgba(37, 99, 235, 0.6);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* Code block styling inside chat bubbles */
+.message-bubble pre {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-family: 'Fira Mono', monospace, monospace;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #a5f3fc; /* cyan-300 */
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.5);
+}
+
+/* Neon glow for user bubbles */
+.message-bubble.user {
+  box-shadow: 0 0 8px 1px rgba(37, 99, 235, 0.6);
+}
+
+/* Neon glow on hover for copy button */
+.copy-btn:hover {
+  color: #22d3ee; /* cyan-400 */
+  text-shadow: 0 0 6px #22d3ee;
+}
+
+/* Focus ring for accessibility */
+:focus-visible {
+  outline-offset: 2px;
+  outline: 2px solid #22d3ee;
+}
+
+/* Typing indicator animation */
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  40% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+}
+.animate-bounce {
+  animation: bounce 1.4s infinite ease-in-out;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-bounce {
+    animation: none !important;
+  }
+  * {
+    transition: none !important;
+  }
+}
