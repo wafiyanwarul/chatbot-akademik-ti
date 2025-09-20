@@ -6,13 +6,13 @@
  * Modify settings in the Settings modal.
  */
 const CONFIG = {
-  BASE_API_URL: "https://your-backend.example.com",
+  BASE_API_URL: "http://127.0.0.1:8000",
   ENDPOINT_CHAT: "/api/chat",
   ENDPOINT_HEALTH: "/api/health",
-  ENDPOINT_HISTORY: "/api/history",
+  ENDPOINT_HISTORY: "/api/history", // kalau belum ada, bisa abaikan
   STREAMING: false,
   USE_WEBSOCKET: false,
-  WEBSOCKET_URL: "wss://your-backend.example.com/ws",
+  WEBSOCKET_URL: "ws://127.0.0.1:8000/ws",
   MAX_CONTEXT_DOCS: 3,
 };
 
